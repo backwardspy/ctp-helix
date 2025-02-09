@@ -5,6 +5,14 @@ on:
     paths:
       - "themes/**/*.toml"
 
+permissions:
+  contents: write
+  actions: write
+  checks: write
+  pull-requests: write
+  discussions: write
+  issues: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -32,7 +40,7 @@ jobs:
             exit 0
           }
 
-      - name: Upload failed tests
+      - name: Upload visual diffs
         if: env.DIFFS_FOUND == 'true'
         uses: edunad/actions-image@v2.0.3
         with:
