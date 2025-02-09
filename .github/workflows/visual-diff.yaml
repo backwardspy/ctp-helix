@@ -47,11 +47,3 @@ jobs:
           path: "output/**/diffs/*.png"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           title: "Visual Diff"
-
-      # - name: Upload diffs as artifacts
-      #   if: env.DIFFS_FOUND == 'true'
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: visual-diffs
-      #     path: output/**/diffs/*.png
-      #     retention-days: 5
